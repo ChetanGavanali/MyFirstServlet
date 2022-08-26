@@ -15,7 +15,7 @@ import java.io.PrintWriter;
         urlPatterns = {"/LoginServlet"},
         initParams = {
                 @WebInitParam(name = "user", value = "Chetan"),
-                @WebInitParam(name = "password", value="12345")
+                @WebInitParam(name = "password", value="Bridge@123")
         }
 )
 public class LoginServlet extends HttpServlet {
@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
         String password=getServletConfig().getInitParameter("password");
 
         String nameValidate = "^[A-Z]{1}[a-z]{2,}";
+        String passwordValidate = "^[A-Z]{1}[a-z0-9!@#$%^&*]{7,}$";
 
         if(userID.equals(user) && password.equals(pwd)) {
             request.setAttribute( "user", user);
